@@ -1,0 +1,224 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* ============================================================
+   HFM — DESIGN SYSTEM: Dark Luxury Performance
+   Palette: Deep black (#0A0806) + Warm gold (#C9A96E) + Cream (#FAF6EE)
+   Typography: Cormorant Garamond (serif) + Montserrat (sans)
+   ============================================================ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-cream: var(--cream);
+  --color-taupe: var(--taupe);
+}
+
+:root {
+  /* HFM Brand Colors */
+  --gold: oklch(0.72 0.08 65);
+  --gold-light: oklch(0.80 0.07 65);
+  --gold-dark: oklch(0.55 0.09 65);
+  --cream: oklch(0.97 0.01 85);
+  --taupe: oklch(0.62 0.02 65);
+
+  /* Dark theme as default */
+  --background: oklch(0.09 0.005 65);
+  --foreground: oklch(0.90 0.01 65);
+  --card: oklch(0.12 0.005 65);
+  --card-foreground: oklch(0.90 0.01 65);
+  --popover: oklch(0.12 0.005 65);
+  --popover-foreground: oklch(0.90 0.01 65);
+  --primary: oklch(0.72 0.08 65);
+  --primary-foreground: oklch(0.09 0.005 65);
+  --secondary: oklch(0.15 0.005 65);
+  --secondary-foreground: oklch(0.80 0.01 65);
+  --muted: oklch(0.15 0.005 65);
+  --muted-foreground: oklch(0.55 0.02 65);
+  --accent: oklch(0.18 0.01 65);
+  --accent-foreground: oklch(0.72 0.08 65);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.985 0 0);
+  --border: oklch(0.72 0.08 65 / 0.12);
+  --input: oklch(0.72 0.08 65 / 0.08);
+  --ring: oklch(0.72 0.08 65 / 0.5);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.12 0.005 65);
+  --sidebar-foreground: oklch(0.90 0.01 65);
+  --sidebar-primary: oklch(0.72 0.08 65);
+  --sidebar-primary-foreground: oklch(0.09 0.005 65);
+  --sidebar-accent: oklch(0.18 0.01 65);
+  --sidebar-accent-foreground: oklch(0.72 0.08 65);
+  --sidebar-border: oklch(0.72 0.08 65 / 0.12);
+  --sidebar-ring: oklch(0.72 0.08 65 / 0.5);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [type="button"]:not(:disabled),
+  [type="submit"]:not(:disabled),
+  [type="reset"]:not(:disabled),
+  a[href],
+  select:not(:disabled),
+  input[type="checkbox"]:not(:disabled),
+  input[type="radio"]:not(:disabled) {
+    @apply cursor-pointer;
+  }
+}
+
+@layer components {
+  .container {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .flex {
+    min-height: 0;
+    min-width: 0;
+  }
+
+  @media (min-width: 640px) {
+    .container {
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+      max-width: 1280px;
+    }
+  }
+
+  /* HFM Typography */
+  .font-serif {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-sans {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* HFM Gold Divider */
+  .gold-divider {
+    width: 50px;
+    height: 1px;
+    background: oklch(0.72 0.08 65);
+    margin: 1.5rem 0;
+  }
+
+  /* Section Label */
+  .section-label {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: oklch(0.72 0.08 65);
+    margin-bottom: 12px;
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.8, 0.25, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-delay-1 { transition-delay: 0.15s; }
+  .reveal-delay-2 { transition-delay: 0.3s; }
+  .reveal-delay-3 { transition-delay: 0.45s; }
+  .reveal-delay-4 { transition-delay: 0.6s; }
+}
+
+/* ============================================================
+   HFM PWA — Mobile App Styles
+   ============================================================ */
+
+/* Remove tap highlight on mobile */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* Smooth scrolling for mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Hide scrollbar on mobile horizontal scroll */
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+.overflow-x-auto {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* PWA safe areas */
+@supports (padding: env(safe-area-inset-bottom)) {
+  .pwa-bottom-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pwa-top-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Mobile app body — no overflow */
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+    background: #0A0806;
+  }
+}
