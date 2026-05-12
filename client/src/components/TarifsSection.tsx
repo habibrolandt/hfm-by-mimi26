@@ -113,7 +113,7 @@ export default function TarifsSection() {
                 </h3>
                 <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
                   {[
-                    { label: "Séance unique", seances: "1", total: "15 000", per: "15 000 / séance" },
+                    { label: "Séance unique", seances: "1", total: "25 000", per: "25 000 / séance" },
                     
                     
                   ].map((item) => (
