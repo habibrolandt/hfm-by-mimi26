@@ -10,7 +10,7 @@ import EntrepriseTab from "./mobile/EntrepriseTab";
 import ContactTab from "./mobile/ContactTab";
 import HistoireTab from "./mobile/HistoireTab";
 import GalerieTab from "./mobile/GalerieTab";
-import DigitalTab from "./mobile/DigitalTab";
+//import DigitalTab from "./mobile/DigitalTab";
 
 type Tab = "home" | "histoire" | "galerie" | "programmes" | "digital" | "entreprise" | "contact";
 
